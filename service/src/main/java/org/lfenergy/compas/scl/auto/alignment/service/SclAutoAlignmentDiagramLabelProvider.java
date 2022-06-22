@@ -9,6 +9,7 @@ import com.powsybl.sld.model.graphs.SubstationGraph;
 import com.powsybl.sld.model.nodes.FeederNode;
 import com.powsybl.sld.model.nodes.Node;
 import com.powsybl.sld.svg.DiagramLabelProvider;
+import com.powsybl.sld.svg.DirectionalFeederInfo;
 import com.powsybl.sld.svg.FeederInfo;
 import com.powsybl.sld.svg.LabelPosition;
 import org.apache.commons.lang3.StringUtils;
@@ -34,8 +35,8 @@ public class SclAutoAlignmentDiagramLabelProvider implements DiagramLabelProvide
 
     @Override
     public List<FeederInfo> getFeederInfos(FeederNode node) {
-        return Arrays.asList(new FeederInfo(ComponentTypeName.ARROW_ACTIVE, LabelDirection.OUT, "", "", null),
-                new FeederInfo(ComponentTypeName.ARROW_REACTIVE, LabelDirection.IN, "", "", null));
+        return Arrays.asList(new DirectionalFeederInfo(ComponentTypeName.ARROW_ACTIVE, LabelDirection.OUT, "", ""),
+                new DirectionalFeederInfo(ComponentTypeName.ARROW_REACTIVE, LabelDirection.IN, "", ""));
     }
 
     @Override
