@@ -30,7 +30,7 @@ class ElementUtilTest {
     void getAttribute_WhenCalledWithSCLElement_ThenRetrieveVersionAttributeFromSCLElement() throws IOException {
         var scl = readSCLElement(BASIC_SCD_FILENAME);
 
-        var result = ElementUtil.getAttribute(scl, "version");
+        var result = ElementUtil.getAttributeValue(scl, "version");
         assertNotNull(result);
         assertEquals("2007", result);
     }
@@ -39,7 +39,7 @@ class ElementUtilTest {
     void getAttribute_WhenCalledWithSCLElement_ThenRetrieveEmptyDummyAttributeFromSCLElementAsNull() throws IOException {
         var scl = readSCLElement(BASIC_SCD_FILENAME);
 
-        var result = ElementUtil.getAttribute(scl, "dummy");
+        var result = ElementUtil.getAttributeValue(scl, "dummy");
         assertNull(result);
     }
 }

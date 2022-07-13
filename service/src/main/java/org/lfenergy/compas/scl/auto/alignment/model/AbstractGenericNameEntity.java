@@ -12,7 +12,7 @@ public abstract class AbstractGenericNameEntity<P extends GenericEntity> extends
     }
 
     public String getName() {
-        return ElementUtil.getAttribute(getElement(), "name");
+        return ElementUtil.getAttributeValue(getElement(), "name");
     }
 
     @Override

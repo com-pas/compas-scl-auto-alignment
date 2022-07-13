@@ -25,7 +25,7 @@ public abstract class AbstractGenericEntity<P extends GenericEntity> implements 
     }
 
     protected String getAttribute(String attributeName) {
-        return ElementUtil.getAttribute(element, attributeName);
+        return ElementUtil.getAttributeValue(element, attributeName);
     }
 
     protected double convertStringToDouble(Element element) {

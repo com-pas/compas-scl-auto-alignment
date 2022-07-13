@@ -24,7 +24,7 @@ public final class ElementUtil {
                 .map(Element.class::cast);
     }
 
-    public static String getAttribute(Element element, String attributeName) {
+    public static String getAttributeValue(Element element, String attributeName) {
         String value = element.getAttribute(attributeName);
         if (StringUtils.isNotBlank(value)) {
             return value;
