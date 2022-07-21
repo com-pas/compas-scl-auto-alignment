@@ -17,12 +17,13 @@ import java.nio.charset.StandardCharsets;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_ELEMENT_NAME;
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCL_NS_URI;
-import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readFile;
-import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCL;
+import static org.lfenergy.compas.scl.auto.alignment.TestUtil.*;
 
 class SclAutoAlignmentEnricherTest {
     @Test
-    void enrich_WhenPassingCase1_ThenXSDUpdated() throws IOException {
+    void enrich_WhenPassingCase1_ThenSCDUpdated() throws Exception {
+        // The JSON file used here is a copy created by the testcase
+        // SclAutoAlignmentServiceTest#createJson_WhenPassingCase1_ThenJsonReturned
         var filename = "scl-1";
         var jsonString = readFile("/json/" + filename + ".json");
         var scl = new GenericSCL(readSCLElement(filename + ".scd"));
@@ -32,10 +33,15 @@ class SclAutoAlignmentEnricherTest {
 
         assertNotNull(scl.getElement());
         writeFile(filename + "-updated.scd", scl);
+
+        assertXYCoordinates(scl.getElement(), "//scl:VoltageLevel[@name='J1']", 2, 4);
+        assertXYCoordinates(scl.getElement(), "//scl:Bay[@name='BusBar A']", 1, 15);
     }
 
     @Test
-    void enrich_WhenPassingCase2_ThenXSDUpdated() throws IOException {
+    void enrich_WhenPassingCase2_ThenSCDUpdated() throws IOException {
+        // The JSON file used here is a copy created by the testcase
+        // SclAutoAlignmentServiceTest#createJson_WhenPassingCase2_ThenJsonReturned
         var filename = "scl-2";
         var jsonString = readFile("/json/" + filename + ".json");
         var scl = new GenericSCL(readSCLElement(filename + ".scd"));

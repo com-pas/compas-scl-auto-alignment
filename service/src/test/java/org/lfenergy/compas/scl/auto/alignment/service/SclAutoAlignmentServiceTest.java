@@ -13,8 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.lfenergy.compas.scl.auto.alignment.TestUtil.readSCL;
-import static org.lfenergy.compas.scl.auto.alignment.TestUtil.writeFile;
+import static org.lfenergy.compas.scl.auto.alignment.TestUtil.*;
 
 @ExtendWith(MockitoExtension.class)
 class SclAutoAlignmentServiceTest {
@@ -29,17 +28,21 @@ class SclAutoAlignmentServiceTest {
     }
 
     @Test
-    void updateSCL_WhenPassingCase1_ThenUpdatedSCLReturned() throws IOException {
+    void updateSCL_WhenPassingCase1_ThenUpdatedSCLReturned() throws Exception {
         var filename = "scl-1";
         var sclString = readSCL(filename + ".scd");
 
         var result = sclAutoAlignmentService.updateSCL(sclString, List.of("AA1"), "Mr. Editor");
         assertNotNull(result);
         writeFile(filename + "-updated-service.scd", result);
+
+        var rootElement = toElement(result);
+        assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='J1']", 2, 4);
+        assertXYCoordinates(rootElement, "//scl:Bay[@name='BusBar A']", 1, 15);
     }
 
     @Test
-    void updateSCL_WhenPassingCase2_ThenUpdatedSCLReturned() throws IOException {
+    void updateSCL_WhenPassingCase2_ThenUpdatedSCLReturned() throws Exception {
         var filename = "scl-2";
         var sclString = readSCL(filename + ".scd");
 
@@ -50,6 +53,7 @@ class SclAutoAlignmentServiceTest {
 
     @Test
     void getSVG_WhenPassingCase1_ThenSVGReturned() throws IOException {
+        // Nice addition to the updateSCL Test to have a visual output from PowSyBl and check how their drawing looks.
         var filename = "scl-1";
         var sclString = readSCL(filename + ".scd");
 
@@ -60,6 +64,7 @@ class SclAutoAlignmentServiceTest {
 
     @Test
     void getSVG_WhenPassingCase2_ThenSVGReturned() throws IOException {
+        // Nice addition to the updateSCL Test to have a visual output from PowSyBl and check how their drawing looks.
         var filename = "scl-2";
         var sclString = readSCL(filename + ".scd");
 
@@ -70,6 +75,8 @@ class SclAutoAlignmentServiceTest {
 
     @Test
     void createJson_WhenPassingCase1_ThenJsonReturned() throws IOException {
+        // This just tests if the SCD File can be processed, because most of the work is done in PowSyBl.
+        // But this way we know the GraphBuilders are still working and not missing electric components.
         var filename = "scl-1";
         var substationName = "AA1";
         var sclData = readSCL(filename + ".scd");
@@ -83,6 +90,8 @@ class SclAutoAlignmentServiceTest {
 
     @Test
     void createJson_WhenPassingCase2_ThenJsonReturned() throws IOException {
+        // This just tests if the SCD File can be processed, because most of the work is done in PowSyBl.
+        // But this way we know the GraphBuilders are still working and not missing electric components.
         var filename = "scl-2";
         var substationName = "_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4";
         var sclData = readSCL(filename + ".scd");
