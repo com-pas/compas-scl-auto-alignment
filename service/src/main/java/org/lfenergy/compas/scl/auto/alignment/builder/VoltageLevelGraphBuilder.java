@@ -41,21 +41,22 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
         var busbarIndex = new AtomicInteger(1);
         voltageLevel.getBays().stream()
                 .filter(GenericBay::isBusbar)
-                .forEach(busbar -> processBusbarNode(busbar, busbarIndex));
+                .forEach(busbar -> processBusbarNode(busbar, busbarIndex.getAndIncrement()));
 
         // Next process the other bays.
+        var bayIndex = new AtomicInteger(1);
         voltageLevel.getBays().stream()
                 .filter(bay -> !bay.isBusbar())
-                .forEach(this::processBayNode);
+                .forEach(bay -> processBayNode(bay, bayIndex.getAndIncrement()));
     }
 
     private void processBusbarNode(GenericBay busbar,
-                                   AtomicInteger busbarIndex) {
+                                   int busbarIndex) {
         busbar.getConnectivityNodes()
                 .stream().findFirst()
                 .ifPresent(connectivityNode ->
                         addNode(connectivityNode.getPathName(),
-                                createBusbarNode(busbar.getFullName(), busbarIndex.getAndIncrement(), 1)));
+                                createBusbarNode(busbar.getFullName(), busbarIndex, 1)));
     }
 
     public BusNode createBusbarNode(String id, int busbarIndex, int sectionIndex) {
@@ -64,9 +65,10 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
         return busNode;
     }
 
-    private void processBayNode(GenericBay bay) {
+    private void processBayNode(GenericBay bay, int bayIndex) {
         bay.getConnectivityNodes().forEach(this::createConnectivityNode);
-        bay.getConductingEquipments().forEach(this::processConductingEquipment);
+        bay.getConductingEquipments().forEach(conductingEquipment ->
+                processConductingEquipment(conductingEquipment, bayIndex));
     }
 
     private void createConnectivityNode(GenericConnectivityNode connectivityNode) {
@@ -94,36 +96,39 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
         return Optional.empty();
     }
 
-    private void processConductingEquipment(GenericConductingEquipment conductingEquipment) {
+    private void processConductingEquipment(GenericConductingEquipment conductingEquipment, int order) {
         var terminals = conductingEquipment.getTerminals();
         var fullName = conductingEquipment.getFullName();
-        var node = createSwitchNode(fullName);
+        var node = createSwitchNode(fullName, order);
 
         if (!terminals.isEmpty()) {
-            Node node1 = terminalToNode(terminals.get(0));
+            Node node1 = terminalToNode(terminals.get(0), order);
             Node node2 = null;
             var termNb = terminals.size();
             if (termNb == 1) {
-                node2 = createLoad(fullName + "/Grounded");
+                node2 = createLoad(fullName + "/Grounded", order);
             } else if (termNb == 2) {
-                node2 = terminalToNode(terminals.get(1));
+                node2 = terminalToNode(terminals.get(1), order);
             }
             connectNode(node, node1);
             connectNode(node, node2);
         }
     }
 
-    private Node terminalToNode(GenericTerminal terminal) {
+    private Node terminalToNode(GenericTerminal terminal, int order) {
         var pathName = terminal.getConnectivityNode();
         if (pathName != null) {
             return getNodeByPath(pathName);
         }
-        return createLoad(terminal.getCNodeName());
+        return createLoad(terminal.getCNodeName(), order);
     }
 
-    private SwitchNode createSwitchNode(String id) {
-        return NodeFactory.createSwitchNode(getGraph(), id, id, SwitchNode.SwitchKind.BREAKER.name(),
+    private SwitchNode createSwitchNode(String id, int order) {
+        var switchNode = NodeFactory.createSwitchNode(getGraph(), id, id, SwitchNode.SwitchKind.BREAKER.name(),
                 false, SwitchNode.SwitchKind.BREAKER, false);
+        switchNode.setOrder(order);
+        switchNode.setDirection(Direction.TOP);
+        return switchNode;
     }
 
     private void connectNode(Node node1, Node node2) {
@@ -134,9 +139,9 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
         return NodeFactory.createFictitiousNode(getGraph(), id, id, id, ComponentTypeName.LINE);
     }
 
-    private FeederNode createLoad(String id) {
+    private FeederNode createLoad(String id, int order) {
         FeederNode fn = NodeFactory.createLoad(getGraph(), id, id);
-        commonFeederSetting(fn, id, 0, null);
+        commonFeederSetting(fn, id, order, Direction.TOP);
         return fn;
     }
 
