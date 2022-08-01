@@ -102,16 +102,16 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
         var node = createSwitchNode(fullName, order);
 
         if (!terminals.isEmpty()) {
-            Node node1 = terminalToNode(terminals.get(0), order);
-            Node node2 = null;
-            var termNb = terminals.size();
-            if (termNb == 1) {
-                node2 = createLoad(fullName + "/Grounded", order);
-            } else if (termNb == 2) {
-                node2 = terminalToNode(terminals.get(1), order);
-            }
+            var node1 = terminalToNode(terminals.get(0), order);
             connectNode(node, node1);
-            connectNode(node, node2);
+
+            if (terminals.size() == 2) {
+                var node2 = terminalToNode(terminals.get(1), order);
+                connectNode(node, node2);
+            } else {
+                var node2 = createLoad(fullName + "/Grounded", order);
+                connectNode(node, node2);
+            }
         }
     }
 
