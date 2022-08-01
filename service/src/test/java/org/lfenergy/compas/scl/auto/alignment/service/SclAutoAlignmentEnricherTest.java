@@ -35,11 +35,13 @@ class SclAutoAlignmentEnricherTest {
         writeFile(filename + "-updated.scd", scl);
 
         assertXYCoordinates(scl.getElement(), "//scl:VoltageLevel[@name='J1']", 2, 4);
-        assertXYCoordinates(scl.getElement(), "//scl:Bay[@name='BusBar A']", 1, 15);
+        assertXYCoordinates(scl.getElement(), "//scl:VoltageLevel[@name='J1']/scl:Bay[@name='BusBar A']", 1, 15);
+        assertXYCoordinates(scl.getElement(), "//scl:VoltageLevel[@name='J1']/scl:Bay[@name='Bay 1S']", 2, 13);
+        assertXYCoordinates(scl.getElement(), "//scl:VoltageLevel[@name='J1']/scl:Bay[@name='Bay 1S']/scl:ConductingEquipment[@name='CBR1']", 1, 1);
     }
 
     @Test
-    void enrich_WhenPassingCase2_ThenSCDUpdated() throws IOException {
+    void enrich_WhenPassingCase2_ThenSCDUpdated() throws Exception {
         // The JSON file used here is a copy created by the testcase
         // SclAutoAlignmentServiceTest#createJson_WhenPassingCase2_ThenJsonReturned
         var filename = "scl-2";
@@ -51,6 +53,12 @@ class SclAutoAlignmentEnricherTest {
 
         assertNotNull(scl.getElement());
         writeFile(filename + "-updated.scd", scl);
+
+        assertXYCoordinates(scl.getElement(), "//scl:PowerTransformer[@name='T4']", 27, 3);
+        assertXYCoordinates(scl.getElement(), "//scl:VoltageLevel[@name='S1 380kV']", 2, 7);
+        assertXYCoordinates(scl.getElement(), "//scl:VoltageLevel[@name='S1 380kV']/scl:Bay[@name='BUSBAR10']", 1, 12);
+        assertXYCoordinates(scl.getElement(), "//scl:VoltageLevel[@name='S1 380kV']/scl:Bay[@name='BAY_T4_2']", 1, 4);
+        assertXYCoordinates(scl.getElement(), "//scl:VoltageLevel[@name='S1 380kV']/scl:Bay[@name='BAY_T4_2']/scl:ConductingEquipment[@name='BREAKER25']", 1, 4);
     }
 
     private Element readSCLElement(String filename) throws IOException {
