@@ -7,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCLXY_NS_URI;
@@ -35,7 +34,7 @@ class AbstractGenericEntityTest {
     @Test
     void getElementsStream_WhenCallingForKnownElement_ThenReturnElements() {
         var result = entity.getElementsStream("Bay")
-                .collect(Collectors.toList());
+                .toList();
 
         assertEquals(8, result.size());
     }
@@ -43,7 +42,7 @@ class AbstractGenericEntityTest {
     @Test
     void getElementsStream_WhenCallingForUnknownElement_ThenReturnEmptyList() {
         var result = entity.getElementsStream("Unknown")
-                .collect(Collectors.toList());
+                .toList();
 
         assertTrue(result.isEmpty());
     }

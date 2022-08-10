@@ -9,7 +9,6 @@ import org.w3c.dom.Element;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.*;
 
@@ -39,7 +38,7 @@ public class GenericSCL implements GenericEntity {
         if (substations == null) {
             substations = ElementUtil.getElementsStream(element, "Substation")
                     .map(substationElement -> new GenericSubstation(this, substationElement))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return substations;
     }

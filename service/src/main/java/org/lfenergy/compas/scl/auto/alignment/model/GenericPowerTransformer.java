@@ -8,7 +8,6 @@ import org.w3c.dom.Element;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GenericPowerTransformer extends AbstractGenericNameEntity<GenericSubstation> {
     private List<GenericTransformerWinding> transformerWindings;
@@ -21,7 +20,7 @@ public class GenericPowerTransformer extends AbstractGenericNameEntity<GenericSu
         if (transformerWindings == null) {
             transformerWindings = getElementsStream("TransformerWinding")
                     .map(element -> new GenericTransformerWinding(this, element))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return transformerWindings;
     }

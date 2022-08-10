@@ -6,11 +6,10 @@ package org.lfenergy.compas.scl.auto.alignment.model;
 import org.w3c.dom.Element;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GenericConductingEquipment extends AbstractGenericNameEntity<GenericBay> {
     private List<GenericTerminal> terminals;
-    
+
     public GenericConductingEquipment(GenericBay parent, Element element) {
         super(parent, element);
     }
@@ -23,7 +22,7 @@ public class GenericConductingEquipment extends AbstractGenericNameEntity<Generi
         if (terminals == null) {
             terminals = getElementsStream("Terminal")
                     .map(element -> new GenericTerminal(this, element))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return terminals;
     }

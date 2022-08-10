@@ -6,7 +6,6 @@ package org.lfenergy.compas.scl.auto.alignment.model;
 import org.w3c.dom.Element;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GenericTransformerWinding extends AbstractGenericNameEntity<GenericPowerTransformer> {
     private List<GenericTerminal> terminals;
@@ -19,7 +18,7 @@ public class GenericTransformerWinding extends AbstractGenericNameEntity<Generic
         if (terminals == null) {
             terminals = getElementsStream("Terminal")
                     .map(element -> new GenericTerminal(this, element))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return terminals;
     }

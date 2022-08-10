@@ -9,7 +9,6 @@ import org.lfenergy.compas.core.commons.ElementConverter;
 import org.lfenergy.compas.scl.auto.alignment.common.ElementUtil;
 
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -52,7 +51,7 @@ class GenericHeaderTest {
 
         var history = ElementUtil.getElementsStream(header.getElement(), "History").findFirst().orElse(null);
         assertNotNull(history);
-        var historyItems = ElementUtil.getElementsStream(header.getElement(), "Hitem").collect(Collectors.toList());
+        var historyItems = ElementUtil.getElementsStream(header.getElement(), "Hitem").toList();
         var historyItem = historyItems.get(historyItems.size() - 1);
         assertNotNull(historyItem);
         assertNotNull(historyItem.getAttribute("revision"));

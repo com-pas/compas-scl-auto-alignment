@@ -9,7 +9,6 @@ import org.w3c.dom.Element;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class GenericSubstation extends AbstractGenericNameEntity<GenericSCL> {
     private List<GenericPowerTransformer> powerTransformers;
@@ -28,7 +27,7 @@ public class GenericSubstation extends AbstractGenericNameEntity<GenericSCL> {
         if (powerTransformers == null) {
             powerTransformers = getElementsStream("PowerTransformer")
                     .map(element -> new GenericPowerTransformer(this, element))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return powerTransformers;
     }
@@ -51,7 +50,7 @@ public class GenericSubstation extends AbstractGenericNameEntity<GenericSCL> {
         if (voltageLevels == null) {
             voltageLevels = getElementsStream("VoltageLevel")
                     .map(element -> new GenericVoltageLevel(this, element))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return voltageLevels;
     }

@@ -7,7 +7,6 @@ import org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentExceptio
 import org.w3c.dom.Element;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.NO_VOLTAGE_FOUND_ERROR_CODE;
 
@@ -30,7 +29,7 @@ public class GenericVoltageLevel extends AbstractGenericNameEntity<GenericSubsta
         if (bays == null) {
             bays = getElementsStream("Bay")
                     .map(element -> new GenericBay(this, element))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return bays;
     }

@@ -6,7 +6,6 @@ package org.lfenergy.compas.scl.auto.alignment.common;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Element;
 
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.lfenergy.compas.scl.auto.alignment.SclAutoAlignmentConstants.SCLXY_NS_URI;
@@ -34,7 +33,7 @@ public class CommonUtil {
                 .filter(Attr.class::isInstance)
                 .map(Attr.class::cast)
                 .filter(attr -> SCLXY_NS_URI.equals(attr.getNamespaceURI()))
-                .collect(Collectors.toList());
+                .toList();
         // Remove the attribute from the element.
         attributesToRemove.forEach(element::removeAttributeNode);
 

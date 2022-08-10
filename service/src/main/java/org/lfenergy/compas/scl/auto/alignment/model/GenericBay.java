@@ -6,7 +6,6 @@ package org.lfenergy.compas.scl.auto.alignment.model;
 import org.w3c.dom.Element;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class GenericBay extends AbstractGenericNameEntity<GenericVoltageLevel> {
@@ -33,7 +32,7 @@ public class GenericBay extends AbstractGenericNameEntity<GenericVoltageLevel> {
         if (connectivityNodes == null) {
             connectivityNodes = getElementsStream("ConnectivityNode")
                     .map(element -> new GenericConnectivityNode(this, element))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return connectivityNodes;
     }
@@ -42,7 +41,7 @@ public class GenericBay extends AbstractGenericNameEntity<GenericVoltageLevel> {
         if (conductingEquipments == null) {
             conductingEquipments = getElementsStream("ConductingEquipment")
                     .map(element -> new GenericConductingEquipment(this, element))
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return conductingEquipments;
     }
