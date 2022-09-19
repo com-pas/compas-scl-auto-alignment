@@ -46,7 +46,7 @@ public class SclAutoAlignmentDiagramLabelProvider implements DiagramLabelProvide
 
     @Override
     public List<NodeDecorator> getNodeDecorators(Node node, Direction direction) {
-        return new ArrayList<>();
+        return Collections.emptyList();
     }
 
     @Override
