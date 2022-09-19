@@ -38,8 +38,8 @@ class SclAutoAlignmentServiceTest {
 
         var rootElement = toElement(result);
         assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='J1']", 2, 4);
-        assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='J1']/scl:Bay[@name='BusBar A']", 1, 15);
-        assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='J1']/scl:Bay[@name='Bay 1S']", 2, 13);
+        assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='J1']/scl:Bay[@name='BusBar A']", 1, 14);
+        assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='J1']/scl:Bay[@name='Bay 1S']", 2, 12);
         assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='J1']/scl:Bay[@name='Bay 1S']/scl:ConductingEquipment[@name='CBR1']", 1, 1);
     }
 
@@ -55,9 +55,9 @@ class SclAutoAlignmentServiceTest {
         var rootElement = toElement(result);
         assertXYCoordinates(rootElement, "//scl:PowerTransformer[@name='T4']", 27, 3);
         assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='S1 380kV']", 2, 7);
-        assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='S1 380kV']/scl:Bay[@name='BUSBAR10']", 1, 12);
+        assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='S1 380kV']/scl:Bay[@name='BUSBAR10']", 1, 10);
         assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='S1 380kV']/scl:Bay[@name='BAY_T4_2']", 1, 4);
-        assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='S1 380kV']/scl:Bay[@name='BAY_T4_2']/scl:ConductingEquipment[@name='BREAKER25']", 1, 4);
+        assertXYCoordinates(rootElement, "//scl:VoltageLevel[@name='S1 380kV']/scl:Bay[@name='BAY_T4_2']/scl:ConductingEquipment[@name='BREAKER25']", 1, 2);
     }
 
     @Test

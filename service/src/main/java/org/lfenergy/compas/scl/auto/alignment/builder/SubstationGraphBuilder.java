@@ -5,8 +5,7 @@ package org.lfenergy.compas.scl.auto.alignment.builder;
 
 import com.powsybl.sld.model.graphs.NodeFactory;
 import com.powsybl.sld.model.graphs.SubstationGraph;
-import com.powsybl.sld.model.nodes.Feeder2WTLegNode;
-import com.powsybl.sld.model.nodes.Feeder3WTLegNode;
+import com.powsybl.sld.model.nodes.FeederNode;
 import com.powsybl.sld.model.nodes.Node;
 import org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentException;
 import org.lfenergy.compas.scl.auto.alignment.model.*;
@@ -70,8 +69,8 @@ public class SubstationGraphBuilder extends AbstractGraphBuilder<SubstationGraph
                     NodeFactory.createMiddle2WTNode(getGraph(),
                             powerTransformer.getFullName(),
                             powerTransformer.getFullName(),
-                            getFeeder2WTLegNode(tws.get(0)),
-                            getFeeder2WTLegNode(tws.get(1)),
+                            getFeederNode(tws.get(0)),
+                            getFeederNode(tws.get(1)),
                             getVoltageLevelBuilder(tws.get(0)).getGraph().getVoltageLevelInfos(),
                             getVoltageLevelBuilder(tws.get(1)).getGraph().getVoltageLevelInfos(),
                             false));
@@ -81,19 +80,14 @@ public class SubstationGraphBuilder extends AbstractGraphBuilder<SubstationGraph
                     NodeFactory.createMiddle3WTNode(getGraph(),
                             powerTransformer.getFullName(),
                             powerTransformer.getFullName(),
-                            getFeeder3WTLegNode(tws.get(0)),
-                            getFeeder3WTLegNode(tws.get(1)),
-                            getFeeder3WTLegNode(tws.get(2))));
+                            getFeederNode(tws.get(0)),
+                            getFeederNode(tws.get(1)),
+                            getFeederNode(tws.get(2))));
         }
     }
 
-    private Feeder2WTLegNode getFeeder2WTLegNode(GenericTransformerWinding transformerWinding) {
+    private FeederNode getFeederNode(GenericTransformerWinding transformerWinding) {
         var connectivityNode = transformerWinding.getTerminals().get(0).getConnectivityNode();
-        return (Feeder2WTLegNode) getNodeByPath(connectivityNode);
-    }
-
-    private Feeder3WTLegNode getFeeder3WTLegNode(GenericTransformerWinding transformerWinding) {
-        var connectivityNode = transformerWinding.getTerminals().get(0).getConnectivityNode();
-        return (Feeder3WTLegNode) getNodeByPath(connectivityNode);
+        return (FeederNode) getNodeByPath(connectivityNode);
     }
 }

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.model;
 
-import com.powsybl.sld.model.nodes.FeederWithSideNode;
+import com.powsybl.sld.model.nodes.NodeSide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -77,9 +77,9 @@ class GenericPowerTransformerTest {
 
     @Test
     void getSide_WhenCalledWithDifferentConnectivityNodes_ThenCorrectSidesAreReturned() {
-        assertEquals(FeederWithSideNode.Side.ONE, powerTransformer.getSide("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78"));
-        assertEquals(FeederWithSideNode.Side.TWO, powerTransformer.getSide("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81"));
-        assertEquals(FeederWithSideNode.Side.THREE, powerTransformer.getSide("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85"));
+        assertEquals(NodeSide.ONE, powerTransformer.getSide("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 30kV/BAY_T4_0/CONNECTIVITY_NODE78"));
+        assertEquals(NodeSide.TWO, powerTransformer.getSide("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 110kV/BAY_T4_1/CONNECTIVITY_NODE81"));
+        assertEquals(NodeSide.THREE, powerTransformer.getSide("_af9a4ae3-ba2e-4c34-8e47-5af894ee20f4/S1 380kV/BAY_T4_2/CONNECTIVITY_NODE85"));
         assertNull(powerTransformer.getSide("UNKNOWN"));
     }
 

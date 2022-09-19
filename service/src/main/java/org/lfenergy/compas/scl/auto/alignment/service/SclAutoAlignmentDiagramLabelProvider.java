@@ -5,13 +5,13 @@ package org.lfenergy.compas.scl.auto.alignment.service;
 
 import com.powsybl.sld.library.ComponentTypeName;
 import com.powsybl.sld.model.coordinate.Direction;
+import com.powsybl.sld.model.coordinate.Side;
 import com.powsybl.sld.model.graphs.SubstationGraph;
+import com.powsybl.sld.model.graphs.VoltageLevelGraph;
+import com.powsybl.sld.model.nodes.BusNode;
 import com.powsybl.sld.model.nodes.FeederNode;
 import com.powsybl.sld.model.nodes.Node;
-import com.powsybl.sld.svg.DiagramLabelProvider;
-import com.powsybl.sld.svg.DirectionalFeederInfo;
-import com.powsybl.sld.svg.FeederInfo;
-import com.powsybl.sld.svg.LabelPosition;
+import com.powsybl.sld.svg.*;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -47,6 +47,26 @@ public class SclAutoAlignmentDiagramLabelProvider implements DiagramLabelProvide
     @Override
     public List<NodeDecorator> getNodeDecorators(Node node, Direction direction) {
         return new ArrayList<>();
+    }
+
+    @Override
+    public String getTooltip(Node node) {
+        return null;
+    }
+
+    @Override
+    public List<ElectricalNodeInfo> getElectricalNodesInfos(VoltageLevelGraph voltageLevelGraph) {
+        return Collections.emptyList();
+    }
+
+    @Override
+    public Optional<BusInfo> getBusInfo(BusNode busNode) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Map<String, Side> getBusInfoSides(VoltageLevelGraph voltageLevelGraph) {
+        return Collections.emptyMap();
     }
 
     String stripLabel(String id) {

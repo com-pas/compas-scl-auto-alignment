@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.builder;
 
-import com.powsybl.sld.library.ComponentTypeName;
 import com.powsybl.sld.model.coordinate.Direction;
 import com.powsybl.sld.model.graphs.BaseGraph;
 import com.powsybl.sld.model.graphs.NodeFactory;
@@ -85,7 +84,7 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
                             }
                         }, () ->
                                 addNode(connectivityNode.getPathName(),
-                                        createFictitiousNode(connectivityNode.getPathName()))
+                                        createConnectivityNode(connectivityNode.getPathName()))
                 );
     }
 
@@ -135,8 +134,8 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
         getGraph().addEdge(node1, node2);
     }
 
-    private FictitiousNode createFictitiousNode(String id) {
-        return NodeFactory.createFictitiousNode(getGraph(), id, id, id, ComponentTypeName.LINE);
+    private ConnectivityNode createConnectivityNode(String id) {
+        return NodeFactory.createConnectivityNode(getGraph(), id);
     }
 
     private FeederNode createLoad(String id, int order) {
@@ -145,16 +144,16 @@ public class VoltageLevelGraphBuilder extends AbstractGraphBuilder<VoltageLevelG
         return fn;
     }
 
-    public Feeder2WTLegNode createFeeder2WTLegNode(String id, FeederWithSideNode.Side side, int order,
-                                                   Direction direction) {
-        Feeder2WTLegNode f2WTe = NodeFactory.createFeeder2WTLegNode(getGraph(), id + "_" + side, id, id, side);
+    public FeederNode createFeeder2WTLegNode(String id, NodeSide side, int order,
+                                             Direction direction) {
+        var f2WTe = NodeFactory.createFeeder2WTLegNode(getGraph(), id + "_" + side, id, id, side);
         commonFeederSetting(f2WTe, id, order, direction);
         return f2WTe;
     }
 
-    public Feeder3WTLegNode createFeeder3WTLegNode(String id, FeederWithSideNode.Side side, int order,
-                                                   Direction direction) {
-        Feeder3WTLegNode f3WTe = NodeFactory.createFeeder3WTLegNodeForSubstationDiagram(getGraph(), id + "_" + side, id, id, side);
+    public FeederNode createFeeder3WTLegNode(String id, NodeSide side, int order,
+                                             Direction direction) {
+        var f3WTe = NodeFactory.createFeeder3WTLegNodeForSubstationDiagram(getGraph(), id + "_" + side, id, id, side);
         commonFeederSetting(f3WTe, id + side.getIntValue(), order, direction);
         return f3WTe;
     }
