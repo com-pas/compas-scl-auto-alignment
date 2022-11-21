@@ -14,8 +14,8 @@ import javax.enterprise.inject.Produces;
  */
 @RegisterForReflection(targets = {com.powsybl.sld.library.Components.class,
         com.powsybl.sld.library.Component.class,
-        org.lfenergy.compas.core.jaxrs.model.ErrorResponse.class,
-        org.lfenergy.compas.core.jaxrs.model.ErrorMessage.class})
+        org.lfenergy.compas.core.commons.model.ErrorResponse.class,
+        org.lfenergy.compas.core.commons.model.ErrorMessage.class})
 public class CompasSclAutoAlignmentConfiguration {
     @Produces
     @ApplicationScoped

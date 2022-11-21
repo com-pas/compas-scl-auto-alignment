@@ -4,14 +4,14 @@
 package org.lfenergy.compas.scl.auto.alignment.rest.v1;
 
 import io.quarkus.security.Authenticated;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.lfenergy.compas.scl.auto.alignment.rest.UserInfoProperties;
 import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignRequest;
 import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignResponse;
 import org.lfenergy.compas.scl.auto.alignment.rest.v1.model.SclAutoAlignSVGRequest;
 import org.lfenergy.compas.scl.auto.alignment.service.SclAutoAlignmentService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -26,7 +26,7 @@ import javax.ws.rs.core.MediaType;
 @RequestScoped
 @Path("/auto/alignment/v1")
 public class SclAutoAlignmentResource {
-    private static final Logger LOGGER = LoggerFactory.getLogger(SclAutoAlignmentResource.class);
+    private static final Logger LOGGER = LogManager.getLogger(SclAutoAlignmentResource.class);
 
     private final SclAutoAlignmentService sclAutoAlignmentService;
 
