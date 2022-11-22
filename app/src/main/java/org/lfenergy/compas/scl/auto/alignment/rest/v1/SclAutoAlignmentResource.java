@@ -45,6 +45,8 @@ public class SclAutoAlignmentResource {
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
     public SclAutoAlignResponse alignment(@Valid SclAutoAlignRequest request) {
+        LOGGER.info("Auto align SCL for Substation(s) {}.", request.getSubstationNames());
+
         String who = jsonWebToken.getClaim(userInfoProperties.who());
         LOGGER.trace("Username used for Who {}", who);
 
@@ -58,6 +60,7 @@ public class SclAutoAlignmentResource {
     @Produces(MediaType.APPLICATION_SVG_XML)
     @Path("/svg")
     public String svg(@Valid SclAutoAlignSVGRequest request) {
+        LOGGER.info("Creating SVG for Substation {}.", request.getSubstationName());
         return sclAutoAlignmentService.getSVG(request.getSclData(), request.getSubstationName());
     }
 }
