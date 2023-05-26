@@ -15,8 +15,8 @@ import org.lfenergy.compas.scl.auto.alignment.builder.SubstationGraphBuilder;
 import org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentException;
 import org.lfenergy.compas.scl.auto.alignment.model.GenericSCL;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
