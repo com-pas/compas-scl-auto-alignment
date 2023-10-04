@@ -20,7 +20,7 @@ SPDX-License-Identifier: Apache-2.0
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <compiler-plugin.version>3.11.0</compiler-plugin.version>
-        <surefire-plugin.version>3.0.0</surefire-plugin.version>
+        <surefire-plugin.version>3.1.2</surefire-plugin.version>
         <sonarqube-plugin.version>3.2.0</sonarqube-plugin.version>
 
         <compas.core.version>0.11.0</compas.core.version>
@@ -95,7 +95,7 @@ SPDX-License-Identifier: Apache-2.0
             <dependency>
                 <groupId>org.eclipse.microprofile.openapi</groupId>
                 <artifactId>microprofile-openapi-api</artifactId>
-                <version>3.1</version>
+                <version>3.1.1</version>
             </dependency>
 
             <dependency>
@@ -240,7 +240,7 @@ SPDX-License-Identifier: Apache-2.0
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-javadoc-plugin</artifactId>
-                            <version>3.5.0</version>
+                            <version>3.6.0</version>
                             <executions>
                                 <execution>
                                     <id>attach-javadocs</id>
