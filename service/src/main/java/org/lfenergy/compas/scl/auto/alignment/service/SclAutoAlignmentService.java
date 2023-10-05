@@ -8,15 +8,15 @@ import com.powsybl.sld.layout.LayoutParameters;
 import com.powsybl.sld.layout.PositionVoltageLevelLayoutFactory;
 import com.powsybl.sld.library.ConvergenceComponentLibrary;
 import com.powsybl.sld.model.graphs.SubstationGraph;
-import com.powsybl.sld.svg.DefaultSVGWriter;
 import com.powsybl.sld.svg.styles.BasicStyleProvider;
+import com.powsybl.sld.svg.DefaultSVGWriter;
 import org.lfenergy.compas.core.commons.ElementConverter;
 import org.lfenergy.compas.scl.auto.alignment.builder.SubstationGraphBuilder;
 import org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentException;
 import org.lfenergy.compas.scl.auto.alignment.model.GenericSCL;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
