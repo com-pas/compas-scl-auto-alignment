@@ -19,14 +19,14 @@ SPDX-License-Identifier: Apache-2.0
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <compiler-plugin.version>3.11.0</compiler-plugin.version>
+        <compiler-plugin.version>3.12.1</compiler-plugin.version>
         <surefire-plugin.version>3.2.3</surefire-plugin.version>
         <sonarqube-plugin.version>3.2.0</sonarqube-plugin.version>
 
         <compas.core.version>0.16.0</compas.core.version>
 
-        <quarkus.platform.version>3.6.3</quarkus.platform.version>
-        <log4j2.version>2.22.0</log4j2.version>
+        <quarkus.platform.version>3.6.4</quarkus.platform.version>
+        <log4j2.version>2.22.1</log4j2.version>
         <powsybl.sld.version>3.3.2</powsybl.sld.version>
         <gson.version>2.10.1</gson.version>
         <openpojo.version>0.9.1</openpojo.version>
