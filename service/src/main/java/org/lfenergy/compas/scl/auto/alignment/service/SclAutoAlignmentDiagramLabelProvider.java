@@ -16,7 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
-public class SclAutoAlignmentDiagramLabelProvider implements DiagramLabelProvider {
+public class SclAutoAlignmentDiagramLabelProvider implements LabelProvider {
     private final Map<Node, List<NodeLabel>> busLabels = new HashMap<>();
 
     public SclAutoAlignmentDiagramLabelProvider(SubstationGraph graph) {

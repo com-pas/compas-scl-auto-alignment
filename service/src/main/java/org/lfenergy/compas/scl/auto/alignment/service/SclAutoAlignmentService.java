@@ -8,6 +8,7 @@ import com.powsybl.sld.layout.LayoutParameters;
 import com.powsybl.sld.layout.PositionVoltageLevelLayoutFactory;
 import com.powsybl.sld.library.ConvergenceComponentLibrary;
 import com.powsybl.sld.model.graphs.SubstationGraph;
+import com.powsybl.sld.svg.SvgParameters;
 import com.powsybl.sld.svg.styles.BasicStyleProvider;
 import com.powsybl.sld.svg.DefaultSVGWriter;
 import org.lfenergy.compas.core.commons.ElementConverter;
@@ -102,17 +103,14 @@ public class SclAutoAlignmentService {
         configureLayout(graph, layoutParameters);
 
         var writer = new StringWriter();
-        var svgWriter = new DefaultSVGWriter(new ConvergenceComponentLibrary(), layoutParameters);
-        svgWriter.write("", graph, new SclAutoAlignmentDiagramLabelProvider(graph), new BasicStyleProvider(), writer);
+        var svgWriter = new DefaultSVGWriter(new ConvergenceComponentLibrary(), layoutParameters, new SvgParameters());
+        svgWriter.write(graph, new SclAutoAlignmentDiagramLabelProvider(graph), new BasicStyleProvider(), writer);
         return writer.toString();
     }
 
     private LayoutParameters getLayoutParameters() {
         return new LayoutParameters()
-                .setAdaptCellHeightToContent(true)
-                .setShowInternalNodes(true)
-                .setCssLocation(LayoutParameters.CssLocation.INSERTED_IN_SVG)
-                .setShowInternalNodes(true);
+                .setAdaptCellHeightToContent(true);
     }
 
     private void configureLayout(SubstationGraph graph, LayoutParameters layoutParameters) {

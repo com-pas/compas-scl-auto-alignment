@@ -19,15 +19,15 @@ SPDX-License-Identifier: Apache-2.0
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <compiler-plugin.version>3.11.0</compiler-plugin.version>
-        <surefire-plugin.version>3.2.2</surefire-plugin.version>
+        <compiler-plugin.version>3.12.1</compiler-plugin.version>
+        <surefire-plugin.version>3.2.5</surefire-plugin.version>
         <sonarqube-plugin.version>3.2.0</sonarqube-plugin.version>
 
         <compas.core.version>0.16.0</compas.core.version>
 
-        <quarkus.platform.version>3.5.1</quarkus.platform.version>
-        <log4j2.version>2.21.1</log4j2.version>
-        <powsybl.sld.version>3.3.2</powsybl.sld.version>
+        <quarkus.platform.version>3.7.1</quarkus.platform.version>
+        <log4j2.version>2.23.0</log4j2.version>
+        <powsybl.sld.version>4.0.0</powsybl.sld.version>
         <gson.version>2.10.1</gson.version>
         <openpojo.version>0.9.1</openpojo.version>
     </properties>
@@ -240,7 +240,7 @@ SPDX-License-Identifier: Apache-2.0
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-javadoc-plugin</artifactId>
-                            <version>3.6.2</version>
+                            <version>3.6.3</version>
                             <executions>
                                 <execution>
                                     <id>attach-javadocs</id>
