@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  packages: write
   pull-requests: write
 
 name: release-please
@@ -19,8 +20,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         id: release
         with:
-          release-type: maven
-          package-name: compas-scl-auto-alignment
+          target-branch: main
       - name: Checkout
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
