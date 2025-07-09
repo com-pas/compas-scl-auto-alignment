@@ -38,3 +38,5 @@ environment variables that can be set in the container to configure the validati
 | JWT_GROUPS_PATH      | smallrye.jwt.path.groups         | The JSON Path where to find the roles of the user. | resource_access/scl-auto-alignment/roles                               |
 
 There are no roles defined in this service, only need to be authenticated.
+
+Test change
