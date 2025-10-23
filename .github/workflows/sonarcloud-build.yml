@@ -67,10 +67,10 @@ jobs:
         run: |
           ./mvnw -B -s custom_maven_settings.xml clean verify
       - name: Save PR number to file
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
         run: echo ${{ github.event.number }} > PR_NUMBER.txt
       - name: Archive PR number
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
         uses: actions/upload-artifact@v4
         with:
           name: PR_NUMBER
