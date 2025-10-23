@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.5](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.5.4...v0.5.5) (2025-10-23)
+
+
+### Bug Fixes
+
+* trigger release ([bc2ca91](https://github.com/com-pas/compas-scl-auto-alignment/commit/bc2ca911093b97cb85607eb4cf446e9c934bbc79))
+
 ## [0.5.4](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.5.3...v0.5.4) (2025-09-01)
 
 
