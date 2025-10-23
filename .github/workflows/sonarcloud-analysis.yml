@@ -12,7 +12,10 @@ on:
 jobs:
   sonar-check:
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.actor.login != 'dependabot[bot]'
+    if: |
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.actor.login != 'dependabot[bot]' &&
+      (github.event.workflow_run.event == 'pull_request' || github.event.workflow_run.event == 'pull_request_target')
     timeout-minutes: 15
     steps:
     - name: echo event
