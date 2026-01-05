@@ -9,7 +9,7 @@ SPDX-License-Identifier: Apache-2.0
     <parent>
         <groupId>org.lfenergy.compas.scl.auto.alignment</groupId>
         <artifactId>compas-scl-auto-alignment</artifactId>
-        <version>0.5.7-SNAPSHOT</version>
+        <version>0.5.7</version>
     </parent>
 
     <artifactId>service</artifactId>
