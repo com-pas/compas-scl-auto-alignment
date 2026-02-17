@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.9](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.5.8...v0.5.9) (2026-02-17)
+
+
+### Build System
+
+* **deps-dev:** Bump org.apache.maven.plugins:maven-compiler-plugin ([914d4c0](https://github.com/com-pas/compas-scl-auto-alignment/commit/914d4c059dcfcc4373287f1d03452c933fe96a8c))
+* **deps-dev:** Bump org.apache.maven.plugins:maven-compiler-plugin from 3.14.1 to 3.15.0 ([a772e8c](https://github.com/com-pas/compas-scl-auto-alignment/commit/a772e8c748702f08abf8034d0e3d7c9a433968dd))
+* **deps:** Bump dawidd6/action-download-artifact from 13 to 14 ([2415ac6](https://github.com/com-pas/compas-scl-auto-alignment/commit/2415ac6e891482ca6872de40df73b981a1376027))
+* **deps:** Bump dawidd6/action-download-artifact from 13 to 14 ([e7836e3](https://github.com/com-pas/compas-scl-auto-alignment/commit/e7836e38e7293ac65cfd395353b73abf71211aff))
+* **deps:** Bump ubi8/ubi-minimal from 8.10-1769387960 to 8.10-1770785328 in /app/src/main/docker ([d22179e](https://github.com/com-pas/compas-scl-auto-alignment/commit/d22179e4b6ebeec6ceeb1d2a3236fe4caef3b8f2))
+* **deps:** Bump ubi8/ubi-minimal in /app/src/main/docker ([d3497ba](https://github.com/com-pas/compas-scl-auto-alignment/commit/d3497ba811afd28aad901841c28afe2fa966c85f))
+
 ## [0.5.8](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.5.7...v0.5.8) (2026-02-02)
 
 
