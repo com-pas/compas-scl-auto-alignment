@@ -29,15 +29,18 @@ import static org.lfenergy.compas.core.websocket.WebsocketSupport.handleExceptio
     encoders = {org.lfenergy.compas.scl.auto.alignment.websocket.v1.encoder.CreateWsResponseEncoder.class})
 public class SclAutoAlignmentWebsocket {
     private static final Logger LOGGER = LogManager.getLogger(SclAutoAlignmentWebsocket.class);
-
+    private final EventBus eventBus;
+    private final JsonWebToken jsonWebToken;
+    private final UserInfoProperties userInfoProperties;
+   
     @Inject
-    EventBus eventBus;
-
-    @Inject
-    JsonWebToken jsonWebToken;
-
-    @Inject
-    UserInfoProperties userInfoProperties;
+    public SclAutoAlignmentWebsocket(EventBus eventBus,
+                                     JsonWebToken jsonWebToken,
+                                     UserInfoProperties userInfoProperties) {
+        this.eventBus = eventBus;
+        this.jsonWebToken = jsonWebToken;
+        this.userInfoProperties = userInfoProperties;
+    }
 
     @OnOpen
     public void onOpen(Session session) {
@@ -45,7 +48,7 @@ public class SclAutoAlignmentWebsocket {
     }
 
     @OnMessage
-    public void onMapMessage(Session session, SclAutoAlignRequest request) {
+    public void onAutoAlignMessage(Session session, SclAutoAlignRequest request) {
         LOGGER.info("Received WebSocket message (SclAutoAlignRequest) from session {}.", session.getId());
         String who = jsonWebToken.getClaim(userInfoProperties.who());
         eventBus.send("auto-align-ws", new SclAutoAlignmentEventRequest(session, request, who));
