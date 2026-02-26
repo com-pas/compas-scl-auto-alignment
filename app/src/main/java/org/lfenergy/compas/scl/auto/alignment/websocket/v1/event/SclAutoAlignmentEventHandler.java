@@ -21,7 +21,7 @@ public class SclAutoAlignmentEventHandler {
     }
 
     @ConsumeEvent(value = "auto-align-ws", blocking = true)
-    public void mapWebsocketsEvent(SclAutoAlignmentEventRequest request) {
+    public void sclAutoAlignWebsocketsEvent(SclAutoAlignmentEventRequest request) {
         new WebsocketHandler<SclAutoAlignResponse>().execute(request.getSession(), () -> {
             var response = new SclAutoAlignResponse();
             response.setSclData(sclAutoAlignmentService.updateSCL(

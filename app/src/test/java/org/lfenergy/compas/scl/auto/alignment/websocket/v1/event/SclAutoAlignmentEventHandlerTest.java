@@ -29,7 +29,7 @@ class SclAutoAlignmentEventHandlerTest {
 	private SclAutoAlignmentEventHandler handler;
 
 	@Test
-	void mapWebsocketsEvent_WhenCalled_ThenSclAutoAlignResponseReturned() {
+	void sclAutoAlignWebsocketsEvent_WhenCalled_ThenSclAutoAlignResponseReturned() {
 		String who = "test-user";
 		SclAutoAlignRequest alignRequest = mock(SclAutoAlignRequest.class);
 		String sclData = "<SCL>...</SCL>";
@@ -42,7 +42,7 @@ class SclAutoAlignmentEventHandlerTest {
 		Session session = mockSession();
 		SclAutoAlignmentEventRequest eventRequest = new SclAutoAlignmentEventRequest(session, alignRequest, who);
 
-		handler.mapWebsocketsEvent(eventRequest);
+		handler.sclAutoAlignWebsocketsEvent(eventRequest);
 
 		SclAutoAlignResponse response = verifyResponse(session, SclAutoAlignResponse.class);
 		assertEquals("<SCL>updated</SCL>", response.getSclData());

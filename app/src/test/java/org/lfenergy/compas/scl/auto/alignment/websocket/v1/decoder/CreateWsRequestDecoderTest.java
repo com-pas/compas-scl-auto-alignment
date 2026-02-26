@@ -46,10 +46,8 @@ class CreateWsRequestDecoderTest {
                 "  <saa:SclData><![CDATA[" + sclData + "]]></saa:SclData>" +
                 "</saa:SclAutoAlignRequest>";
 
-        // Act
         var result = decoder.decode(message);
 
-        // Assert
         assertNotNull(result, "Result should not be null");
         assertEquals(substationName, result.getSubstationNames().get(0), "SubstationName should match");
         assertEquals(sclData, result.getSclData(), "SclData should match");
@@ -58,7 +56,6 @@ class CreateWsRequestDecoderTest {
 
     @Test
     void decode_WhenCalledWithWrongXMLType_ThenExceptionThrown() {
-        // Provide an XML that is not a SclAutoAlignRequest
         String message = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                 + "<InvalidRequest>"
                 + "  <SomeField>value</SomeField>"

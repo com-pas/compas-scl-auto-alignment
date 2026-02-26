@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2026 Alliander N.V.
+// SPDX-License-Identifier: Apache-2.0
 package org.lfenergy.compas.scl.auto.alignment.websocket.v1.event.model;
 
 import org.junit.jupiter.api.Test;
