@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.6.0](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.5.9...v0.6.0) (2026-03-18)
+
+
+### Features
+
+* add unit tests ([be262b5](https://github.com/com-pas/compas-scl-auto-alignment/commit/be262b5fd5e9dc345c2db0b9e61066a182c43ec5))
+* add unit tests for SclAutoAlignmentEventHandler and SclAutoAlignmentEventRequest ([eb3f25d](https://github.com/com-pas/compas-scl-auto-alignment/commit/eb3f25d85938fb44a76d558cf0a36a329b312a46))
+* add websocket support ([53a4926](https://github.com/com-pas/compas-scl-auto-alignment/commit/53a4926ef56ba654cf6578e15180471d7c9a6557))
+* add WebSocket support for auto-alignment functionality ([e5ba4da](https://github.com/com-pas/compas-scl-auto-alignment/commit/e5ba4da0da6830298616e9312ae5ba79f3201a7b))
+* update GitHub workflows with permissions and action versions ([3103a76](https://github.com/com-pas/compas-scl-auto-alignment/commit/3103a76f00562b5c2e986b2dea0674cda181429c))
+
+
+### Bug Fixes
+
+* harden GitHub Actions workflows against supply chain and injection attacks ([bde9268](https://github.com/com-pas/compas-scl-auto-alignment/commit/bde92682be821307b3dbe23a5c180f49e19f3d28))
+
+
+### Build System
+
+* **deps:** Bump dawidd6/action-download-artifact from 14 to 18 ([31ca1e2](https://github.com/com-pas/compas-scl-auto-alignment/commit/31ca1e2f9af4df913ef358aa3ced73fb4389a72a))
+* **deps:** Bump dawidd6/action-download-artifact from 14 to 18 ([103f997](https://github.com/com-pas/compas-scl-auto-alignment/commit/103f99783d47d3a350e5ec506142955e1f5ca039))
+* **deps:** Bump surefire-plugin.version from 3.5.4 to 3.5.5 ([1fe46b7](https://github.com/com-pas/compas-scl-auto-alignment/commit/1fe46b7ab9d743ca5e45011178232380bdfd1a32))
+* **deps:** Bump surefire-plugin.version from 3.5.4 to 3.5.5 ([2c513e6](https://github.com/com-pas/compas-scl-auto-alignment/commit/2c513e6879101f78c9812f845f0da2cca957affa))
+* **deps:** Bump ubi8/ubi-minimal from 8.10-1770785328 to 8.10-1773723642 in /app/src/main/docker ([83f1dc5](https://github.com/com-pas/compas-scl-auto-alignment/commit/83f1dc555c2280a85692983b895958d748f877b3))
+* **deps:** Bump ubi8/ubi-minimal in /app/src/main/docker ([e7c49d5](https://github.com/com-pas/compas-scl-auto-alignment/commit/e7c49d5d4f58ba14d624fed067cd7662f43b773b))
+
 ## [0.5.9](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.5.8...v0.5.9) (2026-02-17)
 
 
