@@ -23,4 +23,4 @@ cosign verify \
   lfenergy/compas-scl-auto-alignment:<tag>
 ```
 
-Replace `<tag>` with the specific release tag (e.g. `v0.6.1`) or `latest`.
+Replace `<tag>` with the specific release tag (e.g. `0.6.1`) or `latest`.
