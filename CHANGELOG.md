@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.6.2](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.6.1...v0.6.2) (2026-05-12)
+
+
+### Bug Fixes
+
+* formatting of release tag example in SECURITY.md ([7048b4c](https://github.com/com-pas/compas-scl-auto-alignment/commit/7048b4c1fcb8f28b6943fa3f1caa0351a40de1d3))
+
+
+### Build System
+
+* **deps:** Bump com.google.code.gson:gson from 2.13.2 to 2.14.0 ([286e748](https://github.com/com-pas/compas-scl-auto-alignment/commit/286e748813bbd4d89c3b6f3e0b5ebfd1f00008b1))
+* **deps:** Bump com.google.code.gson:gson from 2.13.2 to 2.14.0 ([d0f82fc](https://github.com/com-pas/compas-scl-auto-alignment/commit/d0f82fcad5968b37f0532e6160ae2d208e03e3ba))
+* **deps:** Bump dawidd6/action-download-artifact from 20 to 21 ([26ba7b3](https://github.com/com-pas/compas-scl-auto-alignment/commit/26ba7b31e5e465c709a31150d96a3d1a47323be6))
+* **deps:** Bump dawidd6/action-download-artifact from 20 to 21 ([5f4938d](https://github.com/com-pas/compas-scl-auto-alignment/commit/5f4938d906fb87fc49fc68b0cdfc7f08658ce44e))
+* **deps:** Bump googleapis/release-please-action from 4.4.0 to 5.0.0 ([7950017](https://github.com/com-pas/compas-scl-auto-alignment/commit/7950017d71d44d118b21361a638323fb97c2668e))
+* **deps:** Bump googleapis/release-please-action from 4.4.0 to 5.0.0 ([ce275f3](https://github.com/com-pas/compas-scl-auto-alignment/commit/ce275f3816ac333b40e9bb3cb6b6dbf2479107ff))
+* **deps:** Bump log4j2.version from 2.25.4 to 2.26.0 ([c2c9d94](https://github.com/com-pas/compas-scl-auto-alignment/commit/c2c9d945739e81fee865f1a81f8e8e76b71a5a3c))
+* **deps:** Bump log4j2.version from 2.25.4 to 2.26.0 ([cc6e454](https://github.com/com-pas/compas-scl-auto-alignment/commit/cc6e454a341f9ebbb135daea50a18873f94df7a7))
+* **deps:** Bump ubi8/ubi-minimal from 8.10-1776229095 to 8.10-1778072014 in /app/src/main/docker ([ddffdd9](https://github.com/com-pas/compas-scl-auto-alignment/commit/ddffdd9bd7779925408cbf3e959ebd216a6ff7e9))
+* **deps:** Bump ubi8/ubi-minimal in /app/src/main/docker ([b92b3ec](https://github.com/com-pas/compas-scl-auto-alignment/commit/b92b3ec20b326ff405e0ce847d699a25930bc448))
+
 ## [0.6.1](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.6.0...v0.6.1) (2026-04-16)
 
 
