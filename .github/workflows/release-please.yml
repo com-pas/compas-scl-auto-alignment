@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
   packages: write
   pull-requests: write
 
@@ -56,6 +57,10 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
+      - name: Install Cosign
+        if: ${{ steps.release.outputs.release_created }}
+        uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
+
       - name: Create custom Maven Settings.xml
         if: ${{ steps.release.outputs.release_created }}
         uses: whelk-io/maven-settings-xml-action@9dc09b23833fa9aa7f27b63db287951856f3433d # v22
@@ -67,3 +72,9 @@ jobs:
         run: ./mvnw -B -s custom_maven_settings.xml -Pnative-image,release clean deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sign Docker image with Cosign
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          DIGEST=$(docker buildx imagetools inspect lfenergy/compas-scl-auto-alignment:${{ steps.release.outputs.version }} --format '{{.Manifest.Digest}}')
+          cosign sign --yes lfenergy/compas-scl-auto-alignment@"${DIGEST}"
