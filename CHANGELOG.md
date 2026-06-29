@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.6.3](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.6.2...v0.6.3) (2026-06-29)
+
+
+### Build System
+
+* **deps:** Bump actions/checkout from 6.0.2 to 7.0.0 ([cb48515](https://github.com/com-pas/compas-scl-auto-alignment/commit/cb485156bc3e16106132d7ebf7d260b3652e7681))
+* **deps:** Bump actions/checkout from 6.0.2 to 7.0.0 ([f4e7236](https://github.com/com-pas/compas-scl-auto-alignment/commit/f4e7236040b32603e6b477fd166e70de5ff06026))
+* **deps:** Bump actions/setup-java from 5.2.0 to 5.4.0 ([5d0af01](https://github.com/com-pas/compas-scl-auto-alignment/commit/5d0af012cbb560ffe5d31998280cbb0af012c0bb))
+* **deps:** Bump actions/setup-java from 5.2.0 to 5.4.0 ([6baffea](https://github.com/com-pas/compas-scl-auto-alignment/commit/6baffea68782a27d495a6b1414d05e2afc73859f))
+* **deps:** Bump docker/login-action from 4.1.0 to 4.2.0 ([036dcdc](https://github.com/com-pas/compas-scl-auto-alignment/commit/036dcdcdc8ef0df5afc922b50d07b81bede62385))
+* **deps:** Bump docker/login-action from 4.1.0 to 4.2.0 ([e6637bb](https://github.com/com-pas/compas-scl-auto-alignment/commit/e6637bb952a9eac4bcd9858cab10d3dd48ad4daa))
+* **deps:** Bump docker/setup-buildx-action from 4.0.0 to 4.1.0 ([a2ff47d](https://github.com/com-pas/compas-scl-auto-alignment/commit/a2ff47d6c3baae62e3ace6c8c3b9093b5df893ca))
+* **deps:** Bump docker/setup-buildx-action from 4.0.0 to 4.1.0 ([085542b](https://github.com/com-pas/compas-scl-auto-alignment/commit/085542ba4da38424cc8751e22e000dbb96c95b87))
+* **deps:** Bump octokit/request-action ([d91de1b](https://github.com/com-pas/compas-scl-auto-alignment/commit/d91de1bb870cf2a443cb055ba709e8a53a129a56))
+* **deps:** Bump octokit/request-action from 45eef13998ff762839b0a0de9bbcf41970fd056d to b66ca9cd744693e9c29b490fc08831ab66c4a970 ([e814496](https://github.com/com-pas/compas-scl-auto-alignment/commit/e814496debcc75b609552f25e5483eac99eda76a))
+* **deps:** Bump org.jacoco:jacoco-maven-plugin from 0.8.14 to 0.8.15 ([1186987](https://github.com/com-pas/compas-scl-auto-alignment/commit/1186987f019b07ff0865923fc11e935636921962))
+* **deps:** Bump org.jacoco:jacoco-maven-plugin from 0.8.14 to 0.8.15 ([c2f273d](https://github.com/com-pas/compas-scl-auto-alignment/commit/c2f273d7a4e5445084f0ff59bbf1978fa7610e38))
+* **deps:** Bump surefire-plugin.version from 3.5.5 to 3.5.6 ([d1c27b4](https://github.com/com-pas/compas-scl-auto-alignment/commit/d1c27b4ea7a2a1bdbb1a2e08668ba8560b857f72))
+* **deps:** Bump surefire-plugin.version from 3.5.5 to 3.5.6 ([75ba36d](https://github.com/com-pas/compas-scl-auto-alignment/commit/75ba36da1e9cda90f681d830cac7a2fb1f86f758))
+* **deps:** update octokit/request-action to v3.0.0 ([27ab81b](https://github.com/com-pas/compas-scl-auto-alignment/commit/27ab81be4179cbcf9faa94c093f7e2191be58fd4))
+
 ## [0.6.2](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.6.1...v0.6.2) (2026-05-12)
 
 
