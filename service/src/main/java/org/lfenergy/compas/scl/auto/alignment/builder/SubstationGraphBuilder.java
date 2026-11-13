@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.INVALID_FEEDER_NODE_ERROR_CODE;
 import static org.lfenergy.compas.scl.auto.alignment.exception.SclAutoAlignmentErrorCode.VOLTAGELEVEL_NOT_FOUND_ERROR_CODE;
 
 public class SubstationGraphBuilder extends AbstractGraphBuilder<SubstationGraph> {
@@ -88,6 +89,12 @@ public class SubstationGraphBuilder extends AbstractGraphBuilder<SubstationGraph
 
     private FeederNode getFeederNode(GenericTransformerWinding transformerWinding) {
         var connectivityNode = transformerWinding.getTerminals().get(0).getConnectivityNode();
-        return (FeederNode) getNodeByPath(connectivityNode);
+        var node = getNodeByPath(connectivityNode);
+
+        if (!(node instanceof FeederNode)) {
+            throw new SclAutoAlignmentException(INVALID_FEEDER_NODE_ERROR_CODE, "Feeder node is of wrong type for transformer winding: " + transformerWinding.getFullName() + ", feeder node path: " + connectivityNode);
+        }
+
+        return (FeederNode) node;
     }
 }
