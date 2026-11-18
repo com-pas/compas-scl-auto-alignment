@@ -12,4 +12,5 @@ public class SclAutoAlignmentErrorCode {
     public static final String SUBSTATION_NOT_FOUND_ERROR_CODE = "SAA-0002";
     public static final String NO_VOLTAGE_FOUND_ERROR_CODE = "SAA-0003";
     public static final String VOLTAGELEVEL_NOT_FOUND_ERROR_CODE = "SAA-0004";
+    public static final String INVALID_FEEDER_NODE_ERROR_CODE = "SAA-0005";
 }
