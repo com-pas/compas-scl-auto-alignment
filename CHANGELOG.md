@@ -1,5 +1,60 @@
 # Changelog
 
+## [0.6.4](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.6.3...v0.6.4) (2026-11-27)
+
+
+### Bug Fixes
+
+* Invalid transformer feeding node error handling ([094c8c1](https://github.com/com-pas/compas-scl-auto-alignment/commit/094c8c13a1ab5d3ed04f24a27b73ecdf1367b6f1))
+
+
+### Build System
+
+* **deps-dev:** Bump org.apache.maven.plugins:maven-jar-plugin ([#531](https://github.com/com-pas/compas-scl-auto-alignment/issues/531)) ([88ff581](https://github.com/com-pas/compas-scl-auto-alignment/commit/88ff581b8fd82eedb36bda1b46ec9a18626293d3))
+* **deps:** Bump actions/cache from 5.0.5 to 6.1.0 ([#512](https://github.com/com-pas/compas-scl-auto-alignment/issues/512)) ([3bb6926](https://github.com/com-pas/compas-scl-auto-alignment/commit/3bb6926b149e521d3acbfe09ff0f9e11ba0e7cea))
+* **deps:** Bump actions/checkout from 7.0.0 to 7.0.1 ([28451d2](https://github.com/com-pas/compas-scl-auto-alignment/commit/28451d2ff8f5dfe8514f5d371d38a25c19da9b1e))
+* **deps:** Bump actions/setup-java from 5.4.0 to 5.6.0 ([#527](https://github.com/com-pas/compas-scl-auto-alignment/issues/527)) ([4c6b8d1](https://github.com/com-pas/compas-scl-auto-alignment/commit/4c6b8d136f5b94fd9c52f5efe41fcdd33de2e342))
+* **deps:** Bump actions/setup-java from 5.6.0 to 6.0.0 ([b086106](https://github.com/com-pas/compas-scl-auto-alignment/commit/b0861064d74c72446ef5b1bb38feac812491b729))
+* **deps:** Bump actions/setup-java from 5.6.0 to 6.0.0 ([69baf9e](https://github.com/com-pas/compas-scl-auto-alignment/commit/69baf9e381ede3273fd028d61251c4613b2538d8))
+* **deps:** Bump actions/setup-java from 6.0.0 to 6.0.1 ([2220f33](https://github.com/com-pas/compas-scl-auto-alignment/commit/2220f33845c5013d43abbb869f3baca5b13d8e2e))
+* **deps:** Bump actions/setup-java from 6.0.0 to 6.0.1 ([7e6191f](https://github.com/com-pas/compas-scl-auto-alignment/commit/7e6191fc238b1a1ecdf238048f66af18e57bd688))
+* **deps:** Bump actions/setup-java from 6.0.1 to 6.1.0 ([3a67ddc](https://github.com/com-pas/compas-scl-auto-alignment/commit/3a67ddc862c25ee364659600243184335c0399e4))
+* **deps:** Bump actions/setup-java from 6.0.1 to 6.1.0 ([0824055](https://github.com/com-pas/compas-scl-auto-alignment/commit/0824055df042b4fcb7423b091fdad1b55cd36392))
+* **deps:** Bump actions/setup-java from 6.1.0 to 6.3.0 ([c9894eb](https://github.com/com-pas/compas-scl-auto-alignment/commit/c9894eb12dce7b740d64d7bb4a611312b2ea3c87))
+* **deps:** Bump actions/setup-java from 6.1.0 to 6.3.0 ([23a8b20](https://github.com/com-pas/compas-scl-auto-alignment/commit/23a8b20a2abd6cacc6f1be6b79e3cba6522b75ae))
+* **deps:** Bump actions/upload-artifact from 7.0.1 to 7.0.2 ([d94ace6](https://github.com/com-pas/compas-scl-auto-alignment/commit/d94ace6dca17f43d27d1712d9aa20eb1646f0a72))
+* **deps:** Bump actions/upload-artifact from 7.0.1 to 7.0.2 ([1f37739](https://github.com/com-pas/compas-scl-auto-alignment/commit/1f377395f118804a8c14968f51f4d822feddb2a6))
+* **deps:** Bump dawidd6/action-download-artifact from 21 to 24 ([fc4f1fc](https://github.com/com-pas/compas-scl-auto-alignment/commit/fc4f1fcbadeb00a5031faf51f624532441b816dd))
+* **deps:** Bump dawidd6/action-download-artifact from 21 to 24 ([b1b25b2](https://github.com/com-pas/compas-scl-auto-alignment/commit/b1b25b2aaf546cebaffef3b3a3693c9b4fea8282))
+* **deps:** Bump dawidd6/action-download-artifact from 24 to 27 ([a08494f](https://github.com/com-pas/compas-scl-auto-alignment/commit/a08494f270c4ee6bdd244b70b6bf9cbf9658e6c3))
+* **deps:** Bump dawidd6/action-download-artifact from 24 to 27 ([03d0b42](https://github.com/com-pas/compas-scl-auto-alignment/commit/03d0b42f64d9b1bdea7cbaa3b0c1fb3826a1e6fd))
+* **deps:** Bump dawidd6/action-download-artifact from 27 to 28 ([ec51f5f](https://github.com/com-pas/compas-scl-auto-alignment/commit/ec51f5f3912295f81034977ef7d310dc4242a1ae))
+* **deps:** Bump dawidd6/action-download-artifact from 27 to 28 ([2711296](https://github.com/com-pas/compas-scl-auto-alignment/commit/271129645317069e16562a9464fda5bf6b615a9e))
+* **deps:** Bump docker/login-action from 4.2.0 to 4.4.0 ([#519](https://github.com/com-pas/compas-scl-auto-alignment/issues/519)) ([83af520](https://github.com/com-pas/compas-scl-auto-alignment/commit/83af5207dc0c644fe068a390d8b5a298d4095741))
+* **deps:** Bump docker/login-action from 4.4.0 to 4.6.0 ([efef7b0](https://github.com/com-pas/compas-scl-auto-alignment/commit/efef7b04722ab251f3e258516f9e867fb059b68b))
+* **deps:** Bump docker/login-action from 4.4.0 to 4.6.0 ([aad0b9f](https://github.com/com-pas/compas-scl-auto-alignment/commit/aad0b9f436ffb33bdeeccf3d7f9cc936bcfb85ad))
+* **deps:** Bump docker/login-action from 4.6.0 to 4.7.0 ([c78df9b](https://github.com/com-pas/compas-scl-auto-alignment/commit/c78df9b98c0e4a361f20d04ba3a9763c3e27c2a2))
+* **deps:** Bump docker/login-action from 4.6.0 to 4.7.0 ([93956e5](https://github.com/com-pas/compas-scl-auto-alignment/commit/93956e57908e0c1fbf30f95e7678787988de40fb))
+* **deps:** Bump docker/login-action from 4.7.0 to 4.8.0 ([437e02d](https://github.com/com-pas/compas-scl-auto-alignment/commit/437e02dcf6bf64ceeaae71e7e7abaa553af2eff7))
+* **deps:** Bump docker/login-action from 4.7.0 to 4.8.0 ([b88433a](https://github.com/com-pas/compas-scl-auto-alignment/commit/b88433aa6ed6aa20a85f12aa79a6cf726fa97ff8))
+* **deps:** Bump docker/setup-buildx-action from 4.1.0 to 4.2.0 ([#518](https://github.com/com-pas/compas-scl-auto-alignment/issues/518)) ([b471d50](https://github.com/com-pas/compas-scl-auto-alignment/commit/b471d50fde704bad9dc5446cd4f1676293ea9506))
+* **deps:** Bump docker/setup-buildx-action from 4.2.0 to 4.3.0 ([305f299](https://github.com/com-pas/compas-scl-auto-alignment/commit/305f299f7acb0db83293569bb493b339e2170081))
+* **deps:** Bump docker/setup-buildx-action from 4.2.0 to 4.3.0 ([2609b06](https://github.com/com-pas/compas-scl-auto-alignment/commit/2609b06ae16e10f461b2262384de1f50cf252f36))
+* **deps:** Bump docker/setup-buildx-action from 4.3.0 to 4.4.1 ([0311f82](https://github.com/com-pas/compas-scl-auto-alignment/commit/0311f829419f021b2783fefc8e8ff60773be645f))
+* **deps:** Bump docker/setup-buildx-action from 4.3.0 to 4.4.1 ([2637306](https://github.com/com-pas/compas-scl-auto-alignment/commit/26373066443db4e422b50d8ab03ab842bfb0c37f))
+* **deps:** Bump log4j2.version from 2.26.0 to 2.26.1 ([#517](https://github.com/com-pas/compas-scl-auto-alignment/issues/517)) ([8bc6b6b](https://github.com/com-pas/compas-scl-auto-alignment/commit/8bc6b6b1e275beeaabf5895c75e2b1b4a03a5891))
+* **deps:** Bump s4u/maven-settings-action from 4.0.0 to 4.1.0 ([ba72e6e](https://github.com/com-pas/compas-scl-auto-alignment/commit/ba72e6e4edf5fc1a2cddf687a78f69a34b5b72f7))
+* **deps:** Bump s4u/maven-settings-action from 4.0.0 to 4.1.0 ([f6f7ff8](https://github.com/com-pas/compas-scl-auto-alignment/commit/f6f7ff87da1108d37bd6fcd06048e44fccb47202))
+* **deps:** Bump sigstore/cosign-installer from 4.1.2 to 4.1.3 ([39edaa2](https://github.com/com-pas/compas-scl-auto-alignment/commit/39edaa2c93abfb309ee4c07743ad709be5a00d5f))
+* **deps:** Bump sigstore/cosign-installer from 4.1.2 to 4.1.3 ([c15123e](https://github.com/com-pas/compas-scl-auto-alignment/commit/c15123e3e86703e76a6f17f779098c7dfca567ca))
+* **deps:** Bump ubi8/ubi-minimal from 1786322919 to 1788329376 in /app/src/main/docker ([8dca0a0](https://github.com/com-pas/compas-scl-auto-alignment/commit/8dca0a0d17d089b058ac3b2505190ccdf5aff2d0))
+* **deps:** Bump ubi8/ubi-minimal from 1788329376 to 1793308039 in /app/src/main/docker ([1f34c0b](https://github.com/com-pas/compas-scl-auto-alignment/commit/1f34c0b6b7a19ef075c6a72cbc04499f06ac322a))
+* **deps:** Bump ubi8/ubi-minimal from 1793308039 to 1795498863 in /app/src/main/docker ([141ed81](https://github.com/com-pas/compas-scl-auto-alignment/commit/141ed819c1ddef4eee97a72e329e863fb328d8dd))
+* **deps:** Bump ubi8/ubi-minimal in /app/src/main/docker ([d4bdd0e](https://github.com/com-pas/compas-scl-auto-alignment/commit/d4bdd0e196be021d83cc16a2a6da1ba4461d40f6))
+* **deps:** Bump ubi8/ubi-minimal in /app/src/main/docker ([656b03d](https://github.com/com-pas/compas-scl-auto-alignment/commit/656b03d01b66fa4326ab5ed8776aee2180d152af))
+* **deps:** Bump ubi8/ubi-minimal in /app/src/main/docker ([01139c8](https://github.com/com-pas/compas-scl-auto-alignment/commit/01139c8c7c3c8ff8cd5bd9fffd93951b8227ed3c))
+* **deps:** Bump ubi8/ubi-minimal in /app/src/main/docker ([#534](https://github.com/com-pas/compas-scl-auto-alignment/issues/534)) ([3b4678d](https://github.com/com-pas/compas-scl-auto-alignment/commit/3b4678ddf865aba56d8928598cf12acf1e510ec8))
+
 ## [0.6.3](https://github.com/com-pas/compas-scl-auto-alignment/compare/v0.6.2...v0.6.3) (2026-06-29)
 
 
